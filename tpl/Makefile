@@ -205,6 +205,14 @@ ifeq ($(EXTENDED_IMAGE), 1)
 	&& make install
 endif
 
+# OpenResty Nginx Misc
+# ##############################################################################
+dep-lua-openresty-misc:
+ifeq ($(EXTENDED_IMAGE), 1)
+	curl -Lo /lua-openresty-misc.tar.gz https://github.com/openresty/set-misc-nginx-module/archive/v${VER_OPENRESTY_MISC}.tar.gz
+	tar -C / -xvzf /lua-openresty-misc.tar.gz
+endif
+
 # LUA Upstream
 # ##############################################################################
 dep-lua-upstream-nginx-module:
